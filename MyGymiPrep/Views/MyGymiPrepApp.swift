@@ -1,5 +1,5 @@
 //
-// This File belongs to SwiftRestEssentials 
+// This File belongs to MyGymiPrep
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
 
@@ -9,23 +9,22 @@ import SwiftUI
 @main
 struct MyGymiPrepApp: App {
 
-    @AppStorage("selectedGymnasiumTrack") private var selectedTrackRaw: String = ""
-
-    private var selectedTrack: GymnasiumTrack? {
-        GymnasiumTrack(rawValue: selectedTrackRaw)
-    }
+    @State private var appSettings = AppSettings()
 
     var body: some Scene {
         WindowGroup {
-            if let track = selectedTrack {
-                NavigationStack {
-                    ContentView(track: track)
-                }
-            } else {
-                GymnasiumTrackSelectionView { track in
-                    selectedTrackRaw = track.rawValue
+            Group {
+                if appSettings.selectedTrack != nil {
+                    NavigationStack {
+                        ContentView()
+                    }
+                } else {
+                    GymnasiumTrackSelectionView { track in
+                        appSettings.selectedTrack = track
+                    }
                 }
             }
+            .environment(appSettings)
         }
     }
 }

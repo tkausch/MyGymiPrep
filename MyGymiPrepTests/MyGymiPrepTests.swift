@@ -1,5 +1,5 @@
 //
-// This File belongs to SwiftRestEssentials 
+// This File belongs to MyGymiPrep 
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
 

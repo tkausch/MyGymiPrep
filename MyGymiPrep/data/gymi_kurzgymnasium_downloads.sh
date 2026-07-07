@@ -60,43 +60,43 @@ for f in "${deutsch_files[@]}"; do
   curl -sSL -o "deutsch/$f" "$D/$f"
 done
 
-echo "=== Mathematik ==="
-M="$BASE/prüfungsvorbereitung_kg/mathematik"
-declare -a mathe_files=(
-  "2025_mathematik_aufgaben.pdf"
-  "2025_mathematik_loesung.pdf"
-  "2024_mathematik_aufgaben_kg.pdf"
-  "2024_mathematik_loesung_kg.pdf"
-  "2023_mathematik_aufgaben_kg.pdf"
-  "2023_mathematik_loesung_kg.pdf"
-  "2022_mathematik_aufgaben_kg.pdf"
-  "2022_mathematik_loesungen_kg.pdf"
-  "2021_mathematik_aufgaben.pdf"
-  "2021_mathematik_loesungen_kg.pdf"
-  "2020_mathematik_aufgaben_kg.pdf"
-  "2020_mathematik_loesungen_kg1.pdf"
-  "2019_mathematik_aufgaben_kg.pdf"
-  "2019_mathematik_loesung_kg.pdf"
-  "2018_mathematik_aufgaben_kg.pdf"
-  "2018_mathematik_loesung_kg.pdf"
-  "2017_mathematik_aufgaben_kg.pdf"
-  "2017_mathematik_loesung_kg.pdf"
-  "2016_mathematik_aufgaben_kg.pdf"
-  "2016_mathematik_loesung_kg.pdf"
-  "2015_mathematik_aufgaben_kg.pdf"
-  "2015_mathematik_loesung_kg.pdf"
-)
-for f in "${mathe_files[@]}"; do
-  echo "-> $f"
-  curl -sSL -o "mathematik/$f" "$M/$f"
-done
+# echo "=== Mathematik ==="
+# M="$BASE/prüfungsvorbereitung_kg/mathematik"
+# declare -a mathe_files=(
+#   "2025_mathematik_aufgaben.pdf"
+#   "2025_mathematik_loesung.pdf"
+#   "2024_mathematik_aufgaben_kg.pdf"
+#   "2024_mathematik_loesung_kg.pdf"
+#   "2023_mathematik_aufgaben_kg.pdf"
+#   "2023_mathematik_loesung_kg.pdf"
+#   "2022_mathematik_aufgaben_kg.pdf"
+#   "2022_mathematik_loesungen_kg.pdf"
+#   "2021_mathematik_aufgaben.pdf"
+#   "2021_mathematik_loesungen_kg.pdf"
+#   "2020_mathematik_aufgaben_kg.pdf"
+#   "2020_mathematik_loesungen_kg1.pdf"
+#   "2019_mathematik_aufgaben_kg.pdf"
+#   "2019_mathematik_loesung_kg.pdf"
+#   "2018_mathematik_aufgaben_kg.pdf"
+#   "2018_mathematik_loesung_kg.pdf"
+#   "2017_mathematik_aufgaben_kg.pdf"
+#   "2017_mathematik_loesung_kg.pdf"
+#   "2016_mathematik_aufgaben_kg.pdf"
+#   "2016_mathematik_loesung_kg.pdf"
+#   "2015_mathematik_aufgaben_kg.pdf"
+#   "2015_mathematik_loesung_kg.pdf"
+# )
+# for f in "${mathe_files[@]}"; do
+#   echo "-> $f"
+#   curl -sSL -o "mathematik/$f" "$M/$f"
+# done
+#
+# echo "=== Weitere Merkblätter ==="
+# curl -sSL -o "merkblatt/pruefungsanforderungen_zap2_zap3_ims_august2022.pdf" \
+#   "$BASE/prüfungsanforderungen-zap/pruefungsanforderungen_zap2_zap3_ims_august2022.pdf"
+# curl -sSL -o "merkblatt/empfehlungsformular_sek_b.pdf" \
+#   "$BASE/empfehlungsformular_sek_b.pdf"
+# curl -sSL -o "merkblatt/erlaubte_taschenrechner_zap_2026.pdf" \
+#   "$BASE/erlaubte_taschenrechner_zap_2026.pdf"
 
-echo "=== Weitere Merkblätter ==="
-curl -sSL -o "merkblatt/pruefungsanforderungen_zap2_zap3_ims_august2022.pdf" \
-  "$BASE/prüfungsanforderungen-zap/pruefungsanforderungen_zap2_zap3_ims_august2022.pdf"
-curl -sSL -o "merkblatt/empfehlungsformular_sek_b.pdf" \
-  "$BASE/empfehlungsformular_sek_b.pdf"
-curl -sSL -o "merkblatt/erlaubte_taschenrechner_zap_2026.pdf" \
-  "$BASE/erlaubte_taschenrechner_zap_2026.pdf"
-
-echo "Fertig! Alle Dateien liegen in ./gymi_kurzgymnasium/"
+echo "Fertig! Alle Deutsch-Dateien liegen in ./gymi_kurzgymnasium/deutsch/"

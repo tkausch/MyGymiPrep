@@ -1,5 +1,5 @@
 //
-// This File belongs to SwiftRestEssentials
+// This File belongs to MyGymiPrep
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
 
@@ -41,6 +41,15 @@ struct MathTaskDetailView: View {
                         PDFDocumentView(url: url)
                             .navigationTitle("Pruefungs-PDF")
                             .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button {
+                                        printPDF(url: url)
+                                    } label: {
+                                        Image(systemName: "printer")
+                                    }
+                                }
+                            }
                     } label: {
                         Label("Pruefungs-PDF oeffnen", systemImage: "doc.richtext")
                     }
@@ -54,6 +63,15 @@ struct MathTaskDetailView: View {
                         PDFDocumentView(url: url)
                             .navigationTitle("Loesungs-PDF")
                             .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button {
+                                        printPDF(url: url)
+                                    } label: {
+                                        Image(systemName: "printer")
+                                    }
+                                }
+                            }
                     } label: {
                         Label("Loesungs-PDF oeffnen", systemImage: "checkmark.rectangle")
                     }
@@ -86,6 +104,17 @@ struct MathTaskDetailView: View {
             }
         }
         .navigationTitle("Aufgabe \(task.taskNumber)")
+    }
+
+    private func printPDF(url: URL) {
+        let printInfo = UIPrintInfo(dictionary: nil)
+        printInfo.outputType = .general
+        printInfo.jobName = url.deletingPathExtension().lastPathComponent
+
+        let controller = UIPrintInteractionController.shared
+        controller.printInfo = printInfo
+        controller.printingItem = url
+        controller.present(animated: true)
     }
 
 }

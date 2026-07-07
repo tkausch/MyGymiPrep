@@ -1,5 +1,5 @@
 //
-// This File belongs to SwiftRestEssentials 
+// This File belongs to MyGymiPrep
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
 
@@ -7,26 +7,40 @@ import SwiftUI
 
 struct ContentView: View {
 
-    let track: GymnasiumTrack
+    @Environment(AppSettings.self) private var appSettings
+
+    private var track: GymnasiumTrack {
+        appSettings.selectedTrack ?? .long
+    }
 
     var body: some View {
         List {
-            NavigationLink {
-                MathTaskListView(repository: MathTaskRepository(track: track))
-            } label: {
-                Label("Aufgaben", systemImage: "checklist")
+            Section("DEUTSCH") {
+                NavigationLink {
+                    EssayListView()
+                } label: {
+                    Label("Aufsatz", systemImage: "text.alignleft")
+                }
             }
 
-            NavigationLink {
-                MathTestListView(track: track)
-            } label: {
-                Label("Prüfungen", systemImage: "doc.text")
-            }
+            Section("MATHEMATIK") {
+                NavigationLink {
+                    MathTaskListView(repository: MathTaskRepository(track: track))
+                } label: {
+                    Label("Aufgaben", systemImage: "checklist")
+                }
 
-            NavigationLink {
-                MathCategoryListView(track: track)
-            } label: {
-                Label("Kategorien", systemImage: "list.bullet")
+                NavigationLink {
+                    MathTestListView()
+                } label: {
+                    Label("Prüfungen", systemImage: "doc.text")
+                }
+
+                NavigationLink {
+                    MathCategoryListView()
+                } label: {
+                    Label("Kategorien", systemImage: "list.bullet")
+                }
             }
         }
         .navigationTitle(track.displayName)
@@ -44,6 +58,7 @@ struct ContentView: View {
 
 #Preview {
     NavigationStack {
-        ContentView(track: .long)
+        ContentView()
     }
+    .environment(AppSettings())
 }

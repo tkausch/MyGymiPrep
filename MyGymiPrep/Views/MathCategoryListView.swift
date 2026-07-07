@@ -1,5 +1,5 @@
 //
-// This File belongs to SwiftRestEssentials
+// This File belongs to MyGymiPrep
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
 
@@ -7,13 +7,13 @@ import SwiftUI
 
 struct MathCategoryListView: View {
 
+    @Environment(AppSettings.self) private var appSettings
+
     @State private var categoryCounts: [MathCategory: Int] = [:]
     @State private var loadError: String?
 
-    private let repository: MathTaskRepository
-
-    init(track: GymnasiumTrack) {
-        self.repository = MathTaskRepository(track: track)
+    private var track: GymnasiumTrack {
+        appSettings.selectedTrack ?? .long
     }
 
     private var categoriesByTaskCount: [MathCategory] {
@@ -28,10 +28,11 @@ struct MathCategoryListView: View {
     }
 
     var body: some View {
+        let repo = MathTaskRepository(track: track)
         List(categoriesByTaskCount, id: \.self) { category in
             let count = categoryCounts[category, default: 0]
             NavigationLink {
-                MathTaskListView(category: category, repository: repository)
+                MathTaskListView(category: category, repository: repo)
             } label: {
                 HStack {
                     Text(category.rawValue)
@@ -43,9 +44,9 @@ struct MathCategoryListView: View {
             }
         }
         .navigationTitle("Kategorien")
-        .task {
+        .task(id: track) {
             do {
-                categoryCounts = try repository.taskCountsByCategory()
+                categoryCounts = try repo.taskCountsByCategory()
             } catch {
                 loadError = error.localizedDescription
             }
@@ -63,6 +64,7 @@ struct MathCategoryListView: View {
 
 #Preview {
     NavigationStack {
-        MathCategoryListView(track: .long)
+        MathCategoryListView()
     }
+    .environment(AppSettings())
 }

@@ -61,44 +61,39 @@ for f in "${deutsch_files[@]}"; do
   curl -sSL -o "deutsch/$f" "$D/$f"
 done
 
-/*
+# echo "=== Mathematik ==="
+# M="$BASE/prüfungsvorbereitung_lg/mathematik"
+# declare -a mathe_files=(
+#   "2025_mathematik_aufgaben.pdf"
+#   "2025_mathematik_loesungen.pdf"
+#   "2024_mathematik_aufgaben_lg.pdf"
+#   "2024_mathematik_loesungen_lg.pdf"
+#   "2023_mathematik_aufgaben_lg.pdf"
+#   "2023_mathematik_loesungen_lg.pdf"
+#   "2022_mathematik_aufgaben.pdf"
+#   "2022_mathematik_loesungen.pdf"
+#   "2021_mathematik_aufgaben.pdf"
+#   "2021_mathematik_loesungen.pdf"
+#   "2020_mathematik_aufgaben_lg.pdf"
+#   "2020_mathematik_lg.pdf"
+#   "2019_mathematik_aufgaben_lg.pdf"
+#   "2019_mathematik_loesung_lg.pdf"
+#   "2018_mathematik_aufgaben_lg.pdf"
+#   "2018_mathematik_loesung_lg.pdf"
+#   "2017_mathematik_aufgaben_lg.pdf"
+#   "2017_mathematik_loesung_lg.pdf"
+#   "2016_mathematik_aufgaben_lg.pdf"
+#   "2016_mathematik_loesung_lg.pdf"
+#   "2015_mathematik_aufgaben_lg.pdf"
+#   "2015_mathematik_loesung_lg.pdf"
+# )
+# for f in "${mathe_files[@]}"; do
+#   echo "-> $f"
+#   curl -sSL -o "mathematik/$f" "$M/$f"
+# done
+#
+# echo "=== Merkblatt: Prüfungsanforderungen ==="
+# curl -sSL -o "merkblatt/pruefungsanforderungen_lg.pdf" \
+#   "$BASE/prüfungsanforderungen-zap/pruefungsanforderungen_lg.pdf"
 
-echo "=== Mathematik ==="
-M="$BASE/prüfungsvorbereitung_lg/mathematik"
-declare -a mathe_files=(
-  "2025_mathematik_aufgaben.pdf"
-  "2025_mathematik_loesungen.pdf"
-  "2024_mathematik_aufgaben_lg.pdf"
-  "2024_mathematik_loesungen_lg.pdf"
-  "2023_mathematik_aufgaben_lg.pdf"
-  "2023_mathematik_loesungen_lg.pdf"
-  "2022_mathematik_aufgaben.pdf"
-  "2022_mathematik_loesungen.pdf"
-  "2021_mathematik_aufgaben.pdf"
-  "2021_mathematik_loesungen.pdf"
-  "2020_mathematik_aufgaben_lg.pdf"
-  "2020_mathematik_lg.pdf"
-  "2019_mathematik_aufgaben_lg.pdf"
-  "2019_mathematik_loesung_lg.pdf"
-  "2018_mathematik_aufgaben_lg.pdf"
-  "2018_mathematik_loesung_lg.pdf"
-  "2017_mathematik_aufgaben_lg.pdf"
-  "2017_mathematik_loesung_lg.pdf"
-  "2016_mathematik_aufgaben_lg.pdf"
-  "2016_mathematik_loesung_lg.pdf"
-  "2015_mathematik_aufgaben_lg.pdf"
-  "2015_mathematik_loesung_lg.pdf"
-)
-for f in "${mathe_files[@]}"; do
-  echo "-> $f"
-  curl -sSL -o "mathematik/$f" "$M/$f"
-done
-
-
-echo "=== Merkblatt: Prüfungsanforderungen ==="
-curl -sSL -o "merkblatt/pruefungsanforderungen_lg.pdf" \
-  "$BASE/prüfungsanforderungen-zap/pruefungsanforderungen_lg.pdf"
-
-echo "Fertig! Alle Dateien liegen in ./gymi_langgymnasium/"
-
-*/
+echo "Fertig! Alle Deutsch-Dateien liegen in ./gymi_langgymnasium/deutsch/"

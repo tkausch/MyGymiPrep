@@ -1,5 +1,5 @@
 //
-// This File belongs to SwiftRestEssentials
+// This File belongs to MyGymiPrep
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
 
@@ -32,6 +32,8 @@ struct MathTaskListView: View {
 
         var id: String { rawValue }
     }
+
+    @Environment(AppSettings.self) private var appSettings
 
     private let source: Source
     private let repository: MathTaskRepository
@@ -114,7 +116,7 @@ struct MathTaskListView: View {
             }
         }
         .navigationTitle(source.navigationTitle)
-        .task {
+        .task(id: appSettings.selectedTrack) {
             do {
                 tasks = try loadTasks()
             } catch {

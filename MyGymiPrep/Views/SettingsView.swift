@@ -1,5 +1,5 @@
 //
-// This File belongs to SwiftRestEssentials
+// This File belongs to MyGymiPrep
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
 
@@ -7,19 +7,19 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @AppStorage("selectedGymnasiumTrack") private var selectedTrackRaw: String = ""
+    @Environment(AppSettings.self) private var appSettings
 
     var body: some View {
         List {
             Section("Gymnasium") {
                 ForEach(GymnasiumTrack.allCases, id: \.self) { track in
                     Button {
-                        selectedTrackRaw = track.rawValue
+                        appSettings.selectedTrack = track
                     } label: {
                         HStack {
                             Label(track.displayName, systemImage: track.systemImage)
                             Spacer()
-                            if selectedTrackRaw == track.rawValue {
+                            if appSettings.selectedTrack == track {
                                 Image(systemName: "checkmark")
                                     .foregroundStyle(.blue)
                             }
@@ -37,4 +37,5 @@ struct SettingsView: View {
     NavigationStack {
         SettingsView()
     }
+    .environment(AppSettings())
 }
