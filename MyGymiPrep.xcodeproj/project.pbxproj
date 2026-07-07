@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		B61E5A672FF7F58200B676BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B61E5A512FF7F58100B676BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B61E5A582FF7F58100B676BB;
+			remoteInfo = MyGymiMath;
+		};
+		B61E5A712FF7F58200B676BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B61E5A512FF7F58100B676BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B61E5A582FF7F58100B676BB;
+			remoteInfo = MyGymiMath;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B61E5A592FF7F58100B676BB /* MyGymiPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGymiPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61E5A662FF7F58200B676BB /* MyGymiPrepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGymiPrepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61E5A702FF7F58200B676BB /* MyGymiPrepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGymiPrepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B61E5A5B2FF7F58100B676BB /* MyGymiPrep */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyGymiPrep;
+			sourceTree = "<group>";
+		};
+		B61E5A692FF7F58200B676BB /* MyGymiPrepTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyGymiPrepTests;
+			sourceTree = "<group>";
+		};
+		B61E5A732FF7F58200B676BB /* MyGymiPrepUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyGymiPrepUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B61E5A562FF7F58100B676BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		B61E5A632FF7F58200B676BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		B61E5A6D2FF7F58200B676BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B61E5A502FF7F58100B676BB = {
+			isa = PBXGroup;
+			children = (
+				B61E5A5B2FF7F58100B676BB /* MyGymiPrep */,
+				B61E5A692FF7F58200B676BB /* MyGymiPrepTests */,
+				B61E5A732FF7F58200B676BB /* MyGymiPrepUITests */,
+				B61E5A5A2FF7F58100B676BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B61E5A5A2FF7F58100B676BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B61E5A592FF7F58100B676BB /* MyGymiPrep.app */,
+				B61E5A662FF7F58200B676BB /* MyGymiPrepTests.xctest */,
+				B61E5A702FF7F58200B676BB /* MyGymiPrepUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B61E5A582FF7F58100B676BB /* MyGymiPrep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B61E5A782FF7F58200B676BB /* Build configuration list for PBXNativeTarget "MyGymiPrep" */;
+			buildPhases = (
+				B61E5A552FF7F58100B676BB /* Sources */,
+				B61E5A562FF7F58100B676BB /* Frameworks */,
+				B61E5A572FF7F58100B676BB /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				B61E5A5B2FF7F58100B676BB /* MyGymiPrep */,
+			);
+			name = MyGymiPrep;
+			productName = MyGymiMath;
+			productReference = B61E5A592FF7F58100B676BB /* MyGymiPrep.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B61E5A652FF7F58200B676BB /* MyGymiPrepTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B61E5A7B2FF7F58200B676BB /* Build configuration list for PBXNativeTarget "MyGymiPrepTests" */;
+			buildPhases = (
+				B61E5A622FF7F58200B676BB /* Sources */,
+				B61E5A632FF7F58200B676BB /* Frameworks */,
+				B61E5A642FF7F58200B676BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B61E5A682FF7F58200B676BB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B61E5A692FF7F58200B676BB /* MyGymiPrepTests */,
+			);
+			name = MyGymiPrepTests;
+			productName = MyGymiMathTests;
+			productReference = B61E5A662FF7F58200B676BB /* MyGymiPrepTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B61E5A6F2FF7F58200B676BB /* MyGymiPrepUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B61E5A7E2FF7F58200B676BB /* Build configuration list for PBXNativeTarget "MyGymiPrepUITests" */;
+			buildPhases = (
+				B61E5A6C2FF7F58200B676BB /* Sources */,
+				B61E5A6D2FF7F58200B676BB /* Frameworks */,
+				B61E5A6E2FF7F58200B676BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B61E5A722FF7F58200B676BB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B61E5A732FF7F58200B676BB /* MyGymiPrepUITests */,
+			);
+			name = MyGymiPrepUITests;
+			productName = MyGymiMathUITests;
+			productReference = B61E5A702FF7F58200B676BB /* MyGymiPrepUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B61E5A512FF7F58100B676BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					B61E5A582FF7F58100B676BB = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					B61E5A652FF7F58200B676BB = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = B61E5A582FF7F58100B676BB;
+					};
+					B61E5A6F2FF7F58200B676BB = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = B61E5A582FF7F58100B676BB;
+					};
+				};
+			};
+			buildConfigurationList = B61E5A542FF7F58100B676BB /* Build configuration list for PBXProject "MyGymiPrep" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B61E5A502FF7F58100B676BB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B61E5A5A2FF7F58100B676BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B61E5A582FF7F58100B676BB /* MyGymiPrep */,
+				B61E5A652FF7F58200B676BB /* MyGymiPrepTests */,
+				B61E5A6F2FF7F58200B676BB /* MyGymiPrepUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B61E5A572FF7F58100B676BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		B61E5A642FF7F58200B676BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		B61E5A6E2FF7F58200B676BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B61E5A552FF7F58100B676BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		B61E5A622FF7F58200B676BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		B61E5A6C2FF7F58200B676BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B61E5A682FF7F58200B676BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B61E5A582FF7F58100B676BB /* MyGymiPrep */;
+			targetProxy = B61E5A672FF7F58200B676BB /* PBXContainerItemProxy */;
+		};
+		B61E5A722FF7F58200B676BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B61E5A582FF7F58100B676BB /* MyGymiPrep */;
+			targetProxy = B61E5A712FF7F58200B676BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B61E5A762FF7F58200B676BB /* Debug configuration for PBXProject "MyGymiPrep" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B61E5A772FF7F58200B676BB /* Release configuration for PBXProject "MyGymiPrep" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B61E5A792FF7F58200B676BB /* Debug configuration for PBXNativeTarget "MyGymiPrep" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = li.kausch.MyGymiMath;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B61E5A7A2FF7F58200B676BB /* Release configuration for PBXNativeTarget "MyGymiPrep" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = li.kausch.MyGymiMath;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B61E5A7C2FF7F58200B676BB /* Debug configuration for PBXNativeTarget "MyGymiPrepTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = li.kausch.MyGymiMathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGymiPrep.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyGymiPrep";
+			};
+			name = Debug;
+		};
+		B61E5A7D2FF7F58200B676BB /* Release configuration for PBXNativeTarget "MyGymiPrepTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = li.kausch.MyGymiMathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGymiPrep.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyGymiPrep";
+			};
+			name = Release;
+		};
+		B61E5A7F2FF7F58200B676BB /* Debug configuration for PBXNativeTarget "MyGymiPrepUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = li.kausch.MyGymiMathUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyGymiMath;
+			};
+			name = Debug;
+		};
+		B61E5A802FF7F58200B676BB /* Release configuration for PBXNativeTarget "MyGymiPrepUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7R5N52YDS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = li.kausch.MyGymiMathUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyGymiMath;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B61E5A542FF7F58100B676BB /* Build configuration list for PBXProject "MyGymiPrep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B61E5A762FF7F58200B676BB /* Debug configuration for PBXProject "MyGymiPrep" */,
+				B61E5A772FF7F58200B676BB /* Release configuration for PBXProject "MyGymiPrep" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		B61E5A782FF7F58200B676BB /* Build configuration list for PBXNativeTarget "MyGymiPrep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B61E5A792FF7F58200B676BB /* Debug configuration for PBXNativeTarget "MyGymiPrep" */,
+				B61E5A7A2FF7F58200B676BB /* Release configuration for PBXNativeTarget "MyGymiPrep" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		B61E5A7B2FF7F58200B676BB /* Build configuration list for PBXNativeTarget "MyGymiPrepTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B61E5A7C2FF7F58200B676BB /* Debug configuration for PBXNativeTarget "MyGymiPrepTests" */,
+				B61E5A7D2FF7F58200B676BB /* Release configuration for PBXNativeTarget "MyGymiPrepTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		B61E5A7E2FF7F58200B676BB /* Build configuration list for PBXNativeTarget "MyGymiPrepUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B61E5A7F2FF7F58200B676BB /* Debug configuration for PBXNativeTarget "MyGymiPrepUITests" */,
+				B61E5A802FF7F58200B676BB /* Release configuration for PBXNativeTarget "MyGymiPrepUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B61E5A512FF7F58100B676BB /* Project object */;
+	validationLevel = 1;
+}
