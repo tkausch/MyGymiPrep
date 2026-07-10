@@ -1,4 +1,3 @@
-//
 // This File belongs to MyGymiPrep
 // Copyright © 2026 Thomas Kausch.
 // All Rights Reserved.
@@ -6,40 +5,41 @@
 import PDFKit
 import SwiftUI
 
-struct MathTaskDetailView: View {
+struct SprachpruefungDetailView: View {
 
-    let task: MathTask
+    let item: LanguageTask
 
     @AppStorage private var isDone: Bool
     @AppStorage private var isBookmarked: Bool
 
-
-    init(task: MathTask) {
-        self.task = task
-        _isDone = AppStorage(wrappedValue: false, "mathTask.isDone.\(task.id)")
-        _isBookmarked = AppStorage(wrappedValue: false, "mathTask.isBookmarked.\(task.id)")
+    init(item: LanguageTask) {
+        self.item = item
+        _isDone = AppStorage(wrappedValue: false, "sprachpruefung.isDone.\(item.id)")
+        _isBookmarked = AppStorage(wrappedValue: false, "sprachpruefung.isBookmarked.\(item.id)")
     }
 
     var body: some View {
         List {
             Section {
-                Text(task.description)
+                Text(item.title)
                     .font(.headline)
 
-                Text(task.topic)
+                if let punkte = item.punktzahl {
+                    Label("\(punkte) Punkte", systemImage: "checkmark.seal")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Text(item.beschreibung)
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
 
             Section {
-                LabeledContent("Schwierigkeit", value: task.difficulty.displayName)
-                LabeledContent("Punkte", value: "\(task.points)")
-            }
-
-            Section {
-                if let url = task.examURL {
+                if let url = item.pruefungURL {
                     NavigationLink {
                         PDFDocumentView(url: url)
-                            .navigationTitle("Pruefungs-PDF")
+                            .navigationTitle("Prüfung \(item.jahr)")
                             .navigationBarTitleDisplayMode(.inline)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -51,17 +51,17 @@ struct MathTaskDetailView: View {
                                 }
                             }
                     } label: {
-                        Label("Prüfung öffnen", systemImage: "doc.richtext")
+                        Label("Prüfung öffnen", systemImage: "doc.text")
                     }
                 } else {
-                    Label("Prüfungs-PDF nicht gefunden", systemImage: "exclamationmark.triangle")
+                    Label("Prüfung nicht gefunden", systemImage: "exclamationmark.triangle")
                         .foregroundStyle(.secondary)
                 }
 
-                if let url = task.solutionURL {
+                if let url = item.textURL {
                     NavigationLink {
                         PDFDocumentView(url: url)
-                            .navigationTitle("Loesungs-PDF")
+                            .navigationTitle("Textblatt")
                             .navigationBarTitleDisplayMode(.inline)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -73,10 +73,32 @@ struct MathTaskDetailView: View {
                                 }
                             }
                     } label: {
-                        Label("Lösung öffnen", systemImage: "checkmark.rectangle")
+                        Label("Textblatt öffnen", systemImage: "doc.richtext")
                     }
                 } else {
-                    Label("Lösung nicht gefunden", systemImage: "exclamationmark.triangle")
+                    Label("Textblatt nicht gefunden", systemImage: "exclamationmark.triangle")
+                        .foregroundStyle(.secondary)
+                }
+
+                if let url = item.loesungURL {
+                    NavigationLink {
+                        PDFDocumentView(url: url)
+                            .navigationTitle("Lösungen")
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button {
+                                        printPDF(url: url)
+                                    } label: {
+                                        Image(systemName: "printer")
+                                    }
+                                }
+                            }
+                    } label: {
+                        Label("Lösungen öffnen", systemImage: "doc.text.magnifyingglass")
+                    }
+                } else {
+                    Label("Lösungen nicht gefunden", systemImage: "exclamationmark.triangle")
                         .foregroundStyle(.secondary)
                 }
             }
@@ -103,20 +125,19 @@ struct MathTaskDetailView: View {
                 .foregroundStyle(isDone ? .green : .secondary)
             }
         }
-        .navigationTitle("Aufgabe \(task.taskNumber)")
+        .navigationTitle(item.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     private func printPDF(url: URL) {
         let printInfo = UIPrintInfo(dictionary: nil)
         printInfo.outputType = .general
         printInfo.jobName = url.deletingPathExtension().lastPathComponent
-
         let controller = UIPrintInteractionController.shared
         controller.printInfo = printInfo
         controller.printingItem = url
         controller.present(animated: true)
     }
-
 }
 
 private struct PDFDocumentView: UIViewRepresentable {
@@ -134,21 +155,5 @@ private struct PDFDocumentView: UIViewRepresentable {
     func updateUIView(_ pdfView: PDFView, context: Context) {
         guard pdfView.document?.documentURL != url else { return }
         pdfView.document = PDFDocument(url: url)
-    }
-}
-
-#Preview {
-    NavigationStack {
-        MathTaskDetailView(task: MathTask(
-            year: 2025,
-            taskNumber: "1",
-            track: .long,
-            key: "Mathe_2025_1",
-            description: "Berechne den Wert des Terms.",
-            topic: "Terme",
-            category: .fractions,
-            difficulty: .mittel,
-            points: 3
-        ))
     }
 }

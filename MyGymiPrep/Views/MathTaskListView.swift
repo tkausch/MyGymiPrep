@@ -64,6 +64,14 @@ struct MathTaskListView: View {
         }
     }
 
+    private var filteredTasksByYear: [Int: [MathTask]] {
+        Dictionary(grouping: filteredTasks, by: \.year)
+    }
+
+    private var sortedYears: [Int] {
+        filteredTasksByYear.keys.sorted(by: <)
+    }
+
     init(repository: MathTaskRepository) {
         self.source = .all
         self.repository = repository
@@ -90,28 +98,34 @@ struct MathTaskListView: View {
                 .pickerStyle(.segmented)
             }
 
-            ForEach(filteredTasks) { task in
-                NavigationLink {
-                    MathTaskDetailView(task: task)
-                } label: {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(task.description)
-                            .font(.headline)
+            ForEach(sortedYears, id: \.self) { year in
+                Section(String(year)) {
+                    ForEach(filteredTasksByYear[year, default: []].sorted {
+                        $0.taskNumber.localizedStandardCompare($1.taskNumber) == .orderedAscending
+                    }) { task in
+                        NavigationLink {
+                            MathTaskDetailView(task: task)
+                        } label: {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(task.description)
+                                    .font(.headline)
 
-                        Text(task.topic)
-                            .foregroundStyle(.secondary)
+                                Text(task.topic)
+                                    .foregroundStyle(.secondary)
 
-                        HStack {
-                            DifficultyStarsView(difficulty: task.difficulty)
-                            Spacer()
-                            MathTaskBookmarkIndicator(task: task)
-                            MathTaskDoneIndicator(task: task)
-                            Text("\(task.points) Punkte")
-                                .foregroundStyle(.secondary)
-                                .monospacedDigit()
+                                HStack {
+                                    DifficultyStarsView(difficulty: task.difficulty)
+                                    Spacer()
+                                    MathTaskBookmarkIndicator(task: task)
+                                    MathTaskDoneIndicator(task: task)
+                                    Text("\(task.points) Punkte")
+                                        .foregroundStyle(.secondary)
+                                        .monospacedDigit()
+                                }
+                            }
+                            .padding(.vertical, 4)
                         }
                     }
-                    .padding(.vertical, 4)
                 }
             }
         }

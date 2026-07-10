@@ -17,9 +17,21 @@ struct ContentView: View {
         List {
             Section("DEUTSCH") {
                 NavigationLink {
+                    SprachpruefungListView()
+                } label: {
+                    Label("Aufgaben", systemImage: "text.magnifyingglass")
+                }
+
+                NavigationLink {
                     EssayListView()
                 } label: {
                     Label("Aufsatz", systemImage: "text.alignleft")
+                }
+
+                NavigationLink {
+                    SprachpruefungKategorienListView()
+                } label: {
+                    Label("Kategorien", systemImage: "list.bullet")
                 }
             }
 
