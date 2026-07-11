@@ -129,6 +129,7 @@ private struct LanguageTaskBookmarkIndicator: View {
     let item: LanguageTask
 
     @AppStorage private var isBookmarked: Bool
+    @Environment(\.theme) private var theme
 
     init(item: LanguageTask) {
         self.item = item
@@ -138,7 +139,7 @@ private struct LanguageTaskBookmarkIndicator: View {
     var body: some View {
         if isBookmarked {
             Image(systemName: "bookmark.fill")
-                .foregroundStyle(.blue)
+                .foregroundStyle(theme.bookmarked)
                 .accessibilityLabel("Mit Lesezeichen")
         }
     }
@@ -149,6 +150,7 @@ private struct LanguageTaskDoneIndicator: View {
     let item: LanguageTask
 
     @AppStorage private var isDone: Bool
+    @Environment(\.theme) private var theme
 
     init(item: LanguageTask) {
         self.item = item
@@ -157,7 +159,7 @@ private struct LanguageTaskDoneIndicator: View {
 
     var body: some View {
         Image(systemName: isDone ? "checkmark.circle.fill" : "circle")
-            .foregroundStyle(isDone ? .green : .secondary)
+            .foregroundStyle(isDone ? theme.done : .secondary)
             .accessibilityLabel(isDone ? "Erledigt" : "Nicht erledigt")
     }
 }

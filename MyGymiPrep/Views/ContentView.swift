@@ -8,6 +8,7 @@ import SwiftUI
 struct ContentView: View {
 
     @Environment(AppSettings.self) private var appSettings
+    @Environment(\.theme) private var theme
 
     private var track: GymnasiumTrack {
         appSettings.selectedTrack ?? .long
@@ -34,6 +35,7 @@ struct ContentView: View {
                     Label("Kategorien", systemImage: "list.bullet")
                 }
             }
+            .tint(theme.deutsch)
 
             Section("MATHEMATIK") {
                 NavigationLink {
@@ -54,6 +56,7 @@ struct ContentView: View {
                     Label("Kategorien", systemImage: "list.bullet")
                 }
             }
+            .tint(theme.mathematik)
         }
         .navigationTitle(track.displayName)
         .toolbar {

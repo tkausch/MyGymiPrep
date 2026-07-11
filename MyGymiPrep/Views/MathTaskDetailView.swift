@@ -12,6 +12,7 @@ struct MathTaskDetailView: View {
 
     @AppStorage private var isDone: Bool
     @AppStorage private var isBookmarked: Bool
+    @Environment(\.theme) private var theme
 
 
     init(task: MathTask) {
@@ -90,7 +91,7 @@ struct MathTaskDetailView: View {
                         systemImage: isBookmarked ? "bookmark.fill" : "bookmark"
                     )
                 }
-                .foregroundStyle(isBookmarked ? .blue : .secondary)
+                .foregroundStyle(isBookmarked ? theme.bookmarked : .secondary)
 
                 Button {
                     isDone.toggle()
@@ -100,7 +101,7 @@ struct MathTaskDetailView: View {
                         systemImage: isDone ? "checkmark.circle.fill" : "circle"
                     )
                 }
-                .foregroundStyle(isDone ? .green : .secondary)
+                .foregroundStyle(isDone ? theme.done : .secondary)
             }
         }
         .navigationTitle("Aufgabe \(task.taskNumber)")

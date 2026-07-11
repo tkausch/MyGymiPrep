@@ -34,6 +34,7 @@ struct MathTaskListView: View {
     }
 
     @Environment(AppSettings.self) private var appSettings
+    @Environment(\.theme) private var theme
 
     private let source: Source
     private let repository: MathTaskRepository
@@ -168,6 +169,8 @@ private struct DifficultyStarsView: View {
 
     let difficulty: Difficulty
 
+    @Environment(\.theme) private var theme
+
     private var filledStarCount: Int {
         switch difficulty {
         case .einfach: return 0
@@ -182,7 +185,7 @@ private struct DifficultyStarsView: View {
         HStack(spacing: 2) {
             ForEach(1...4, id: \.self) { index in
                 Image(systemName: index <= filledStarCount ? "star.fill" : "star")
-                    .foregroundStyle(index <= filledStarCount ? .yellow : .secondary)
+                    .foregroundStyle(index <= filledStarCount ? theme.starFilled : .secondary)
             }
         }
         .accessibilityLabel("Schwierigkeit: \(difficulty.displayName)")
@@ -194,6 +197,7 @@ private struct MathTaskBookmarkIndicator: View {
     let task: MathTask
 
     @AppStorage private var isBookmarked: Bool
+    @Environment(\.theme) private var theme
 
     init(task: MathTask) {
         self.task = task
@@ -203,7 +207,7 @@ private struct MathTaskBookmarkIndicator: View {
     var body: some View {
         if isBookmarked {
             Image(systemName: "bookmark.fill")
-                .foregroundStyle(.blue)
+                .foregroundStyle(theme.bookmarked)
                 .accessibilityLabel("Mit Lesezeichen")
         }
     }
@@ -214,6 +218,7 @@ private struct MathTaskDoneIndicator: View {
     let task: MathTask
 
     @AppStorage private var isDone: Bool
+    @Environment(\.theme) private var theme
 
     init(task: MathTask) {
         self.task = task
@@ -222,7 +227,7 @@ private struct MathTaskDoneIndicator: View {
 
     var body: some View {
         Image(systemName: isDone ? "checkmark.circle.fill" : "circle")
-            .foregroundStyle(isDone ? .green : .secondary)
+            .foregroundStyle(isDone ? theme.done : .secondary)
             .accessibilityLabel(isDone ? "Erledigt" : "Nicht erledigt")
     }
 }

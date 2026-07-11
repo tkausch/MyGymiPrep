@@ -41,11 +41,13 @@ private struct TrackCard: View {
 
     let track: GymnasiumTrack
 
+    @Environment(\.theme) private var theme
+
     var body: some View {
         HStack(spacing: 16) {
             Image(systemName: track.systemImage)
                 .font(.system(size: 36))
-                .foregroundStyle(.blue)
+                .foregroundStyle(theme.accent)
                 .frame(width: 56)
 
             VStack(alignment: .leading, spacing: 4) {

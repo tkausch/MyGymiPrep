@@ -11,6 +11,7 @@ struct SprachpruefungDetailView: View {
 
     @AppStorage private var isDone: Bool
     @AppStorage private var isBookmarked: Bool
+    @Environment(\.theme) private var theme
 
     init(item: LanguageTask) {
         self.item = item
@@ -112,7 +113,7 @@ struct SprachpruefungDetailView: View {
                         systemImage: isBookmarked ? "bookmark.fill" : "bookmark"
                     )
                 }
-                .foregroundStyle(isBookmarked ? .blue : .secondary)
+                .foregroundStyle(isBookmarked ? theme.bookmarked : .secondary)
 
                 Button {
                     isDone.toggle()
@@ -122,7 +123,7 @@ struct SprachpruefungDetailView: View {
                         systemImage: isDone ? "checkmark.circle.fill" : "circle"
                     )
                 }
-                .foregroundStyle(isDone ? .green : .secondary)
+                .foregroundStyle(isDone ? theme.done : .secondary)
             }
         }
         .navigationTitle(item.title)

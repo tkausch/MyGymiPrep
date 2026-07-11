@@ -8,6 +8,7 @@ import SwiftUI
 struct EssayListView: View {
 
     @Environment(AppSettings.self) private var appSettings
+    @Environment(\.theme) private var theme
 
     @State private var essaysByYear: [Int: [Essay]] = [:]
     @State private var loadError: String?
@@ -74,6 +75,7 @@ private struct EssayBookmarkIndicator: View {
     let essay: Essay
 
     @AppStorage private var isBookmarked: Bool
+    @Environment(\.theme) private var theme
 
     init(essay: Essay) {
         self.essay = essay
@@ -83,7 +85,7 @@ private struct EssayBookmarkIndicator: View {
     var body: some View {
         if isBookmarked {
             Image(systemName: "bookmark.fill")
-                .foregroundStyle(.blue)
+                .foregroundStyle(theme.bookmarked)
                 .accessibilityLabel("Mit Lesezeichen")
         }
     }
@@ -94,6 +96,7 @@ private struct EssayDoneIndicator: View {
     let essay: Essay
 
     @AppStorage private var isDone: Bool
+    @Environment(\.theme) private var theme
 
     init(essay: Essay) {
         self.essay = essay
@@ -102,7 +105,7 @@ private struct EssayDoneIndicator: View {
 
     var body: some View {
         Image(systemName: isDone ? "checkmark.circle.fill" : "circle")
-            .foregroundStyle(isDone ? .green : .secondary)
+            .foregroundStyle(isDone ? theme.done : .secondary)
             .accessibilityLabel(isDone ? "Erledigt" : "Nicht erledigt")
     }
 }
